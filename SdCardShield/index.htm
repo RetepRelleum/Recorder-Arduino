@@ -1,0 +1,101 @@
+<html>
+    <head>
+        <style>
+            .imgBG {
+                position: absolute;
+                z-index: -1;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+            google.charts.load('current', {'packages': ['gauge']});
+            google.charts.setOnLoadCallback(drawChart);
+            var dat = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0];
+
+            function drawChart() {
+                var data = [];
+                var chart = [];
+                loadXMLDoc()
+                for (i = 0; i < 10; i++) {
+                    data[i] = google.visualization.arrayToDataTable([['Label', 'Value'], ['C', dat[i]]]);
+                }
+                var options = {
+                    width: 120, height: 120,
+                    redFrom: 22, redTo: 100,
+                    greenFrom: 10, greenTo: 22,
+                    yellowFrom: 0, yellowTo: 10,
+                    max: 100
+                };
+                for (i = 0; i < 10; i++) {
+                    chart[i] = new google.visualization.Gauge(document.getElementById("chart_div" + (i + 1)));
+                }
+                for (i = 0; i < 10; i++) {
+                    chart[i].draw(data[i], options);
+                }
+                setInterval(function () {
+                    loadXMLDoc();
+                }, 50000);
+
+
+                function loadXMLDoc() {
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState === 4 && this.status === 200) {
+                            var xx = this.responseText.split(",");
+                            for (i = 0; i < 12; i++) {
+                                dat[i] = parseFloat(xx[i]);
+                            }
+                            for (i = 0; i < 10; i++) {
+                                data[i].setValue(0, 1, dat[i]);
+                                chart[i].draw(data[i], options);
+                            }
+                        }
+                    };
+                    var a = "?";
+                    xhttp.open("GET", a, true);
+                    xhttp.send();
+                }
+            }
+        </script>
+    </head>
+    <body>  
+
+        <H1><a href="tes.htm">Heizung</a>	</H1>
+        <table style="background:url('Bild.svg') ; background-size: 100%;">
+            <tr>
+                <td>  </td>
+                <td height="200"></div></td> 
+                <td><div id="chart_div9" style="width: 120px; height: 120px;"></div></td> 
+                <td></td> 
+                <td><div id="chart_div10" style="width: 120px; height: 120px;"></div></td> 
+            </tr>
+            <tr>
+                <td>  </td>
+                <td height="200"><div id="chart_div2" style="width: 120px; height: 120px;"></div></td> 
+                <td><div id="chart_div1" style="width: 120px; height: 120px;"></div></td> 
+                <td></td> 
+                <td><div id="chart_div3" style="width: 120px; height: 120px;"></div></td> 
+            </tr>
+            <tr>
+                <td height="200"><div id="chart_div5" style="width: 120px; height: 120px;"></div></td> 
+                <td></td> 
+                <td></td> 
+                <td></td> 
+                <td><div id="chart_div4" style="width: 120px; height: 120px;"></div></td> 
+            </tr>
+            <tr>
+                <td height="200"> </td> 
+                <td><div id="chart_div8" style="width: 120px; height: 120px;"></div></td> 
+                <td><div id="chart_div7" style="width: 120px; height: 120px;"></div></td> 
+                <td><div id="chart_div6" style="width: 120px; height: 120px;"></div></td> 
+                <td></td> 
+        </table> 
+
+    </body>
+</html>

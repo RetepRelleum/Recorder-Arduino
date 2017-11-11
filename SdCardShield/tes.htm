@@ -1,0 +1,100 @@
+<html>
+    <head>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script type="text/javascript">
+            var d = new Date();
+            var dat = "dat/" + d.getFullYear() + ((d.getMonth() < 9)? "0" : "" ) + (d.getMonth() + 1) + ((d.getDate()<10)?"0":"")+ d.getDate()+ ".TXT";
+            var array2 = [""];
+            var app = angular.module('myApp', []);
+            function myF(csvString) {
+                var array = csvString.split("\n");
+                var data = new google.visualization.Data                data.addColumn('number', "Heiz. VorlRückl");Table();
+                data.addColumn('datetime', 'Day Time');
+                data.addColumn('number', "Heiz. Vorl");
+                data.addColumn('number', "Heiz. Rückl");
+                data.addColumn('number', "Brauch Wasser");
+                data.addColumn('number', "Boiler Wasser");
+                data.addColumn('number', "Wasser vor WP");               
+                data.addColumn('number', "Wasser nach WP");  
+                data.addColumn('number', "E. Sond. Vorl");                                     
+                data.addColumn('number', "E. Sond. Rückl");   
+                data.addColumn('number', "Wohnung");  
+                data.addColumn('number', "Aussen");                 
+                data.addRows(array.length);
+                for (i = 0; i < array.length; i++) {
+                    var row = array[i].split(",");
+                    var da = new Date();
+                    da = new Date(row[0]);
+                    data.setCell(i, 0, da);
+                    for (x = 1; x < 11; x++) {
+                        data.setCell(i, x, row[x]);
+                    }
+                }
+                var options = {'title': 'Heizungstemperaturen vom ' + ((d.getDate()<10)?"0":"")+ d.getDate() + "." + ((d.getMonth() < 9)? "0" : "" ) + (d.getMonth() + 1) + "." + d.getFullYear(),
+                    vAxis: {title: "Temperatur in Grad C",
+                 
+                        },
+                    hAxis: {
+                        title: "Zeit in Stunden",
+                        viewWindow: {
+                            min: new Date(d.getFullYear(), d.getMonth(), d.getDate(), 0, 0),
+                            max: new Date(d.getFullYear(), d.getMonth(), d.getDate(), 24, 00)
+                        },
+                    },
+                    'width': "100%",
+                    'height': 600};
+                var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+                chart.draw(data, options);
+            }
+            google.charts.load('current', {
+                callback: function () {
+                    $.get(dat, function (csvString) {
+                        myF(csvString);
+                    });
+                },
+                packages: ['corechart']
+            });
+            $.get("DIR", function (csvString) {
+                csvString = csvString.substr(0, csvString.length - 2);
+                array2 = csvString.split(",");
+                for (i = 0; i < array2.length; i++) {
+                    array2[i] = array2[i].replace(".TXT", "");
+                }
+                $scope.names = array2;
+            });
+            app.controller('myCtrl', function ($scope) {
+                $scope.names = array2;
+                $scope.myFunctionMO = function () {
+                    $scope.names = array2;
+                };
+                $scope.myFunctionMO = function () {
+                    $scope.names = array2;
+                };
+                $scope.myFunctionCh = function () {
+                    var a = $scope.selectedName;
+                    var b = a.substring(0, 4) + "-" + a.substring(4, 6) + "-" + a.substring(6, 8);
+                    d = new Date(b);
+                    dat = "dat/" + d.getFullYear() + ((d.getMonth() < 9)? "0" : "" ) + (d.getMonth() + 1) + ((d.getDate()<10)?"0":"")+ d.getDate()+ ".TXT";
+                    abc = 04;
+                    $.get(dat, function (csvString) {
+                        myF(csvString);
+                    });
+                };
+            });
+        </script>
+    </head>
+    <body>  
+       <H1><a href="/">Heizung</a>	</H1>
+        <div ng-app="myApp" 
+             ng-model="selectedCar" 
+             ng-controller="myCtrl" 
+             ng-mouseover="myFunctionMO()" 
+             ng-click="myFunctionCh()">
+            <select ng-model="selectedName" ng-options="x for x in names">
+            </select>
+        </div>
+        <div id="chart_div"></div>
+    </body>
+</html>
