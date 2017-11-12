@@ -3,7 +3,7 @@ Angefangen hat es, dass ich auf der Arduino Seite den ArduinoUnoWifi gesehen hab
 Das war die Idee.
 Das war die Idee und nach etlichen Tagen und weitere Hardware ist das Resultat unten erschlich.
 
-![](html1.png?raw=true)
+![](html1.png|width=100)
 ![](html2.png?raw=true)
 
 Folgende Hardware war von Nöten :
