@@ -3,8 +3,8 @@ Angefangen hat es, dass ich auf der Arduino Seite den ArduinoUnoWifi gesehen hab
 Das war die Idee.
 Das war die Idee und nach etlichen Tagen und weitere Hardware ist das Resultat unten erschlich.
 
-![](html1.png "Google Line Chart ")
-![](html2.png "Google Visualization: Gauge ")
+![](html1.png "Google Line Chart")
+![](html2.png "Google Visualization: Gauge")
 
 Folgende Hardware war von Nöten :
 
