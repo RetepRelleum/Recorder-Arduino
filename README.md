@@ -19,6 +19,6 @@ Folgende Hardware war von Nöten :
   
   - NTC-Widerstand Perle 30 kOhm, B57551G1303F005, EPCOS
   
-  - und Diverse Kleinmaterial Widerstände 30 kOhm Kabel ...
+  - und diverse Kleinmaterial, Widerstände 30 kOhm, Kabel ...
 
 
