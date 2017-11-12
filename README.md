@@ -6,5 +6,6 @@ Das war die Idee und nach etlichen Tagen und weitere Hardware ist das Resultat u
 ![](html1.png "Google Line Chart")
 ![](html2.png "Google Visualization: Gauge")
 
+
 Folgende Hardware war von Nöten :
 
