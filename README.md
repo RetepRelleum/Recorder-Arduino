@@ -21,4 +21,6 @@ Folgende Hardware war von Nöten :
   
   - und diverse Kleinmaterial, Widerstände 30 kOhm, Kabel ...
 
+Das Arduino Uno Wifi Bord wird mit einer WIFI der ESP-link Firmware ausgeliefert. Diese erlaubt keine Kommunikation über das User Datagram Protocol. Somit kann die Zeit nicht über das Network Time Protocol abgefragt werden. Somit muss die Firmware mit der „WiFi Link“ Firmware ausgetauscht werden. 
 
+https://github.com/jandrassy/arduino-firmware-wifilink/blob/ota/UNOWIFI_DEV_ED.md
