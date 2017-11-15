@@ -24,4 +24,6 @@ Das Arduino Uno Wifi Bord wird mit der ESP-link Firmware ausgeliefert. Diese erl
 
 https://github.com/jandrassy/arduino-firmware-wifilink/blob/ota/UNOWIFI_DEV_ED.md
 
+Unten ist das Verdrahtungsschema erschlich. Oben der ArduinoUnoWifi unten der ArduinoUno mit SD Schield
+
 ![](Zeichnung.svg "Verdrahtung ")
