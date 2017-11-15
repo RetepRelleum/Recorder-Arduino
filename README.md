@@ -34,8 +34,7 @@ Visualization: Area Chart
 
 Overview
 
-An area chart that is rendered within the browser using SVG or VML. Displays tips when hovering over points.
-A Simple Example
+points.
 
 <html>
   <head>
