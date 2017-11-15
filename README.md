@@ -25,8 +25,7 @@ Das Arduino Uno Wifi Bord wird mit der ESP-link Firmware ausgeliefert. Diese erl
 https://github.com/jandrassy/arduino-firmware-wifilink/blob/ota/UNOWIFI_DEV_ED.md
 
 
-<html>
-  <head>
+
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart']});
@@ -51,8 +50,6 @@ https://github.com/jandrassy/arduino-firmware-wifilink/blob/ota/UNOWIFI_DEV_ED.m
         chart.draw(data, options);
       }
     </script>
-  </head>
-  <body>
+
     <div id="chart_div" style="width: 100%; height: 500px;"></div>
-  </body>
-</html>
+
