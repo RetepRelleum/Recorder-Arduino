@@ -6,7 +6,7 @@ Das war die Idee und nach etlichen Tagen und weiterer Hardware ist das Resultat 
 ![](html2.png "Google Visualization: Gauge")
 
 
-Folgende Hardware war von Nöten :
+## Folgende Hardware war von Nöten :
 
   - Microcontroller board, Uno Wi-Fi, A000133, ATmega328P, A000133, Arduino
   
@@ -24,7 +24,7 @@ Das Arduino Uno Wifi Bord wird mit der ESP-link Firmware ausgeliefert. Diese erl
 
 https://github.com/jandrassy/arduino-firmware-wifilink/blob/ota/UNOWIFI_DEV_ED.md
 
-Unten ist das Verdrahtungsschema erschlich. Oben der ArduinoUnoWifi unten der ArduinoUno mit SD Schield
+## Unten ist das Verdrahtungsschema erschlich. Oben der ArduinoUnoWifi, unten der ArduinoUno mit SD Schield.
 
 ![](Zeichnung.svg "Verdrahtung ")
 
