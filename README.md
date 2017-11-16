@@ -1,6 +1,6 @@
 ## Willkommen bei Arduino Temperatur Recorder 
 Angefangen hat es, dass ich auf der Arduino Seite den ArduinoUnoWifi gesehen haben. Also kann man „einfach“ mit einem SD Schield  einen Temperatur Recorder erstellen, welcher über eine Webseite erreichbar ist. 
-Das war die Idee und nach etlichen Tagen und weiterer Hardware ist das Resultat unten erschlich.
+Das war die Idee und nach etlichen Tagen und weiterer Hardware ist das Resultat unten sichtbar.
 
 ![](html1.png "Google Line Chart")
 ![](html2.png "Google Visualization: Gauge")
