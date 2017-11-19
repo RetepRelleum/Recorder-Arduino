@@ -6,7 +6,7 @@ Das war die Idee und nach etlichen Tagen und weiterer Hardware ist das Resultat 
 ![](html2.png "Google Visualization: Gauge")
 
 
-## Folgende Hardware war von Nöten :
+## Folgende Hardware wurde verbaut :
 
   - Microcontroller board, Uno Wi-Fi, A000133, ATmega328P, A000133, Arduino
   
