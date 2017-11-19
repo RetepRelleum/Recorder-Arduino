@@ -1,5 +1,3 @@
-
-
 #include <SPI.h>
 #include <SD.h>
 
@@ -28,11 +26,8 @@ File root;
 
 
 void setup() {
-  // Open serial communications and wait for port to open:
   Serial.begin(38400);
-  // see if the card is present and can be initialized:
   if (!SD.begin(chipSelect)) {
-    // don't do anything more:
     return;
   }
 
@@ -113,7 +108,6 @@ boolean doSendData() {
       fileclose = true;
     }
   }
-
   Serial.print("#" + String(sizeToSend) + "PUT");
   timeOut = millis();
   int i = 0;
@@ -135,7 +129,6 @@ boolean doSendData() {
     }
   }
   return   false;
-
 }
 
 boolean doGet(char in) {
@@ -192,7 +185,6 @@ boolean doGet(char in) {
   }
   return (in != ETX );
 }
-
 
 boolean doData(char in) {
   if (in != ETX) {
@@ -268,7 +260,6 @@ String unixtToString(uint32_t t) {
     --t;
   }
   if (t < 0) t += 365, ++yr;
-  // - Find month and day of month from day of year
   static uint8_t const dm[2][12] = {
     { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31},
     { 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}
@@ -300,7 +291,6 @@ boolean isSommer(uint32_t t) {
     --t;
   }
   if (t < 0) t += 365, ++yr;
-  // - Find month and day of month from day of year
   static uint8_t const dm[2][12] = {
     { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31},
     { 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}
@@ -311,7 +301,7 @@ boolean isSommer(uint32_t t) {
   while (day >= dm[ly][month]) day -= dm[ly][month++];
 
   boolean sommer = false;
-  if ((month > 2 && month < 9)sommer=true ;
+  if (month > 2 && month < 9)sommer=true ;
   if ((month == 2) && (31 - day + wochentag < 7) && (wochentag > 0))sommer = true; 
   if ((month == 2) && (31 - day + wochentag < 7) && (wochentag == 0) && (h > 0 ))sommer = true;
   if ((month == 9) && (31 - day + wochentag > 7) )sommer = true;
