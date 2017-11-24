@@ -29,3 +29,4 @@ Oben der ArduinoUnoWifi, unten der ArduinoUno mit SD Schield.
 
 ![](Zeichnung.svg "Verdrahtung ")
 
+![](a.png "Verdrahtung ")
